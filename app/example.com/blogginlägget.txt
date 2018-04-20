@@ -1,0 +1,39 @@
+1.
+När en klient (webbläsare) frågar efter tillgång till en webbsida
+så kommer servern först att lokalisera filen,
+sedan kan servern ta vidare åtgärder beroende på filtypen.
+När det gäller PHP-filer (som denna hemsida använder) så innehåller filen
+skript, som servern utför.
+Sedan skickas den färdiga filen till klienten, som läser in och visar upp hemsidan.
+
+2.
+Hemsidan utvecklades med programvaran VirtualBox, som låter användaren
+skapa en så kallad virtuell maskin, vilket kan liknas till en andra dator, där programvaran Apache sedan
+installeras, vilket skapar en webbserver som hanterar hemsidan. För att förenkla processen att starta upp
+servern så används programmet Vagrant.
+
+När en klient (användare, oftast via en webbläsare) vill nå en hemsida så skickas en
+förfrågan till servern. För att skicka förfrågan till rätt plats så
+används nätverksprotokollet IP (Internet Protocol), där varje maskin med uppkoppling
+till Internet är/var menad att ha en unik adress/sifferkombination.
+
+När en förfrågan skickats till servern så kommer servern först att lokalisera filen
+som ska skickas tillbaka. På servern så används skriptspråket PHP, som används
+för att skapa hemsidor som inte är statiska (alla bloggpostar använder exempelvis samma sida,
+men olika värden har skickats från klienten för att ladda in olika sidor).
+
+Som del av skriptspråkets process så interagerar servern även med en databas, där information om sådant som användare, bloggpostar eller kommentarer
+sparas i separata tabeller. Som exempel så skickas en fråga till databasen för att servern ska läsa in denna bloggpost: både texten och titeln sparas i databasen.
+
+När skriptspråket har hanterats så skickas sedan den färdiga sidan till klienten, där användaren inte kan se vilka processer som skriptspråket gått igenom,
+utan istället bara kan se den kod som den skickats. Därefter visar klienten upp sidan.
+
+3.
+Denna hemsida är sårbar mot följande attacker:
+- Injektion: textinput som kopplas mot en databas kollar inte om texten är skadlig (ett SQL-query eller statements som alltid är sanna)
+- Svag inloggning: alla användare som registreras är administratörer, det nuvarande administratörskontot har ett mycket svagt lösenord. Misslyckade inloggningsförsök ger inte några konsekvenser
+- Känslig data krypteras inte på någon del av servern
+- Servern saknar säkerhetsinställningar överlag
+- Hemsidan har inget skydd mot XSS utöver det som PHP ger per automatik
+- Serverns komponenter kan möjligtvis vara (och kommer troligt att bli) utdaterade
+- Hemsidan skapar inte loggar

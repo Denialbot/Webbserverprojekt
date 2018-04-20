@@ -1,0 +1,77 @@
+body
+{
+    background-image:url("../images/bodybg.jpg");
+}
+
+.errormessage
+{
+    background-color:palevioletred; 
+}
+
+.menuitem
+{
+    border: 2px solid darkslategrey;
+    margin-left: 0.5em;
+    margin-right: 1em;
+}
+
+.maincontainer
+{
+    background-color: chartreuse;
+    margin-left: 30%;
+    margin-right: 30%;
+    width: 40%;
+}
+
+.header
+{
+    background-color: darkgoldenrod;
+    height: 30px;
+    padding-bottom:0;
+    padding-top: 10px;
+}
+
+.content
+{
+    background-color: darkcyan;
+    padding-bottom:7px;
+    padding-top: 5px;
+}
+
+.post
+{
+    background-color: gainsboro;
+    margin-bottom: 5px;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-left:1%;
+    padding-right:1%;
+    width: 78%;
+}
+
+.footer
+{
+    background-color:darkred;
+}
+
+label
+{
+    display:inline-block;
+    width:7em;
+}
+
+.pseudolabel
+{
+    display:inline-block;
+}
+
+.DEATH
+{
+    color:darkred;
+    text-decoration: none;
+}
+
+.DEATH:hover
+{
+    text-decoration-line: line-through;
+}
