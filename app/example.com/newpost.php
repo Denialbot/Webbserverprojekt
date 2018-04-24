@@ -41,7 +41,7 @@
                     { //om det är en bild
                         if($_FILES["image"]["size"] < 4900000)
                         { // om bilden inte är för stor
-                            $filename = basename($_FILES["image"]["name"]).time().".image";
+                            $filename = time().'-'.basename($_FILES["image"]["name"]);
                             move_uploaded_file($_FILES["image"]["tmp_name"], "uploads/".$filename); //filen flyttas till uploads
                             $hasimage = 1; //variabel för databasen
                         }

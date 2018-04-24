@@ -27,7 +27,7 @@
                 <div class="post">
                     <h4>
                     <?php
-                    echo $Post[title];
+                        echo $Post[title];
                     ?>
                     </h4>
                 <?php
