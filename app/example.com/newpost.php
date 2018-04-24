@@ -9,14 +9,16 @@
             require_once "partials/connection.php";
             if($_SESSION['logged in'] == false)
             { //om ingen användare är inloggad så laddas startsidan in
-                header("Location: http://localhost:8080/index.php");
+                header("Location: index.php");
             }
-            echo '<div class="content">';
-            echo '<form method="post" enctype="multipart/form-data" action="newpost.php" id="blogpost">';
-            echo '<div><label for="Title">Blog post title:</label><input type="text" name="Title" id="Title"/></div>';
-            echo '<div><label for="content">Post content:</label><textarea form="blogpost" name="content" id="content" maxlength="1000"></textarea></div>';
-            echo '<div><label for="image">Image for post:</label><input type="file" name="image" id="image"/></div>';
-            echo '</form>'; //formuläret för att skapa nya inlägg
+            ?>
+            <div class="content">
+            <form method="post" enctype="multipart/form-data" action="newpost.php" id="blogpost">
+            <div><label for="Title">Blog post title:</label><input type="text" name="Title" id="Title"/></div>
+            <div><label for="content">Post content:</label><textarea form="blogpost" name="content" id="content" maxlength="1000"></textarea></div>
+            <div><label for="image">Image for post:</label><input type="file" name="image" id="image"/></div>
+            </form> <!-- >formuläret för att skapa nya inlägg </!-- >
+            <?php
             if(isset($_POST['PostAttempt']))
             { //om ett nytt inlägg ska skapas
                 $hasimage = 0;
@@ -67,7 +69,7 @@
                         $SQL = 'INSERT INTO images (name, post_ID) VALUES ("'.$filename.'","'.$post[id].'");';
                         $sql->query($SQL);
                     }
-                    header("Location: http://localhost:8080"); //skickar användaren till start
+                    header("Location: index.php"); //skickar användaren till start
                 }
             }
             echo '</div>';

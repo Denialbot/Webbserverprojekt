@@ -9,7 +9,7 @@
             require_once "partials/connection.php";
             if($_SESSION['logged in'] == false)
             {
-                header("Location: http://localhost:8080/index.php");
+                header("Location: index.php");
             }
             if(isset($_POST['EditAttempt']))
             {
@@ -31,7 +31,7 @@
                     $SQL = 'UPDATE blogposts SET title = "'.$title.'", post = "'.$content.'" WHERE id = '.$_GET['id'].';';
                     $sql->query($SQL);
                     echo mysqli_error($sql);
-                    header("Location: http://localhost:8080/post.php?id=".$_GET[id]);
+                    header("Location: post.php?id=".$_GET[id]);
                 }
             }
             else
@@ -41,13 +41,18 @@
                 $title = $postdata[title];
                 $content = $postdata[post];
             }
-            echo '<div class="content">';
-            echo '<form method="post" action="edit.php?id='.$_GET[id].'" id="edit">';
-            echo '<div><label for="Title">Blog post title:</label><input type="text" name="Title" id="Title" value="'.$title.'"/></div>';
-            echo '<div><label for="content">Post content:</label><textarea form="edit" name="content" id="content" maxlength="1000">'.$content.'</textarea></div>';
-            echo '<div><input type="submit" value="Post" name="EditAttempt"/></div>';
-            echo '</form>';
-            echo '</div>';
+            ?>
+
+            <div class="content">
+                <form method="post" action="edit.php?id='.$_GET[id].'" id="edit">
+                <?php
+                    echo '<div><label for="Title">Blog post title:</label><input type="text" name="Title" id="Title" value="'.$title.'"/></div>';
+                    echo '<div><label for="content">Post content:</label><textarea form="edit" name="content" id="content" maxlength="1000">'.$content.'</textarea></div>';
+                ?>
+                    <div><input type="submit" value="Post" name="EditAttempt"/></div>
+                </form>
+            </div>
+            <?php
             require "partials/footer.php";
         ?>
         </div>

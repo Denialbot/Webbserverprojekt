@@ -635,4 +635,22 @@ g Uncomplicated firewall...
 
 Ubuntu 16.04.4 LTS ubuntu-xenial ttyS0
 
-ubuntu-xenial login: 
+ubuntu-xenial login: [[0;32m  OK  [0m] Started ACPI event daemon.
+         Stopping MySQL Community Server...
+[[0;32m  OK  [0m] Stopped MySQL Community Server.
+[[0;32m  OK  [0m] Started ACPI event daemon.
+[[0;32m  OK  [0m] Stopped MySQL Community Server.
+[[0;32m  OK  [0m] Started ACPI event daemon.
+[[0;32m  OK  [0m] Started ACPI event daemon.
+[[0;32m  OK  [0m] Started ACPI event daemon.
+[[0;32m  OK  [0m] Stopped MySQL Community Server.
+[[0;32m  OK  [0m] Started ACPI event daemon.
+[[0;32m  OK  [0m] Started ACPI event daemon.
+         Starting MySQL Community Server...
+[[0;32m  OK  [0m] Started MySQL Community Server.
+[[0;32m  OK  [0m] Started ACPI event daemon.
+         Stopping MySQL Community Server...
+[[0;32m  OK  [0m] Stopped MySQL Community Server.
+         Starting MySQL Community Server...
+[[0;32m  OK  [0m] Started MySQL Community Server.
+[[0;32m  OK  [0m] Started Daily apt upgrade and clean activities.

@@ -1,3 +1,5 @@
-<?php
-echo '<div class="footer"> Some good footer right here </div>';
-?>
+<html>
+    <body>
+        <div class="footer">This is a footer</div>
+    </body>
+</html>

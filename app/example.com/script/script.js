@@ -6,7 +6,7 @@ elements.forEach( element => {
         fetch("delete.php?id=" + posid) //skickar ett HTTP-GET-Request och tar bort inlägget
         .then(function(){
             const post= document.getElementById("post-"+posid);
-            post.innerHTML = ""; //gömmer inlägget som just togs bort
+            post.innerHTML = ""; //tömmer html-koden för inlägget som just togs bort
         })
     })
 });

@@ -9,7 +9,7 @@
             require_once "partials/connection.php";
             if($_SESSION['logged in'] == true)
             { //om en användare redan är inloggad så laddas huvudsidan in igen 
-                header("Location: http://localhost:8080");
+                header("Location: index.php");
             }
             if(isset($_POST[loginattempt]))
             { //om ett inloggningsförsök har gjorts
@@ -21,23 +21,25 @@
                     { //om lösenordet stämmer så loggas användaren in
                         $_SESSION['logged in'] = true;
                         $_SESSION['User'] = $Check[ID];
-                        header("Location: http://localhost:8080/dashboard.php");
+                        header("Location: dashboard.php");
                     }
                     else
                     { //om lösenordet är fel skickas användaren till startsidan utan att loggas in
                         $_SESSION['logged in'] = false;
                         $_SESSION['User'] = NULL;
-                        header("Location: http://localhost:8080");
+                        header("Location: index.php");
                     }
                 }
             }
-            echo '<div class="content">';
-            echo '<form method="post" action="login.php" id="Login">';
-            echo '<div><label for="Username">Username:</label><input type="text" name="Username" id="Username"/></div>';
-            echo '<div><label for="Password">Password:</label><input type="password" name="Password" id="Password"/></div>';
-            echo '<div><input type="submit" name="loginattempt" value="Log In"/></div>';
-            echo '</form>';
-            echo '</div>';
+            ?>
+            <div class="content">'
+                <form method="post" action="login.php" id="Login">
+                    <div><label for="Username">Username:</label><input type="text" name="Username" id="Username"/></div>
+                    <div><label for="Password">Password:</label><input type="password" name="Password" id="Password"/></div>
+                    <div><input type="submit" name="loginattempt" value="Log In"/></div>
+                </form>
+            </div>
+            <?php
             require "partials/footer.php";
         ?>
         </div>
