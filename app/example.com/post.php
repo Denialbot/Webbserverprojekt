@@ -23,10 +23,14 @@
             $ImageName = mysqli_fetch_array($sql->query($Query)); //hämtar info om inläggets bild, om det finns en
             while ($Post = mysqli_fetch_array($PostData))
             { //skriver ut inlägget på sidan
-                echo '<div class="post">';
-                echo '<h4>';
-                echo $Post[title];
-                echo '</h4>';
+                ?>
+                <div class="post">
+                    <h4>
+                    <?php
+                        echo $Post[title];
+                    ?>
+                    </h4>
+                <?php
                 if($Post[HasImage] == 1)
                 { //om inlägget har en bild så läggs den in här
                     echo '<div><img src="uploads/'.$ImageName[name].'" alt="Related Image"></img></div>';
@@ -39,10 +43,14 @@
             $Comments = $sql->query($Query);//läser in alla kommentarer som kopplats till inlägget
             while ($Comment = mysqli_fetch_array($Comments))
             { //skriver ut kommentarerna under inlägget
-                echo '<div class="post">';
+                ?>
+                <div class="post">
+                <?php
                 echo '<h3>'.$Comment[Poster].'</h3>';
                 echo $Comment[Comment];
-                echo '</div>';
+                ?>
+                </div>
+                <?php
             }
             if($_SESSION['logged in'])
             { //om en användare är inloggad

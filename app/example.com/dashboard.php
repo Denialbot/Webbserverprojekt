@@ -9,7 +9,7 @@
             require_once "partials/connection.php";
             if($_SESSION['logged in'] == false)
             { //om ingen användare är inloggad så laddas huvudsidan in igen
-                header("Location: http://localhost:8080/index.php");
+                header("Location: index.php");
             }
             echo '<div class="content">';
             $Query = "SELECT id, title FROM blogposts";

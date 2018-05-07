@@ -22,10 +22,14 @@
             echo '<h1> Hello World </h1>';
             while ($Post = mysqli_fetch_array($Blogposts))
             { //skriver ut alla blogginlägg i varsin div-ruta
-                echo '<div class="post">';
-                echo '<h4>';
-                echo $Post[title];
-                echo '</h4>';
+                ?>
+                <div class="post">
+                    <h4>
+                        <?php
+                        echo $Post[title];
+                        ?>
+                    </h4>
+                <?php
                 if(strlen($Post[post]) < 20) //om inlägget är kortare är 20 tecken
                 {
                     echo '<p>'.$Post[post].'</p>';

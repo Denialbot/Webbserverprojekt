@@ -26,17 +26,19 @@
                     $sql->query($Query); //registrerar användaren i databasen
                     $_SESSION['logged in'] = true; //loggar in användaren
                     $_SESSION['User'] = $_POST[Username]; //loggar in användaren
-                    header("Location: http://localhost:8080"); //skickar användaren till startsidan
+                    header("Location: index.php"); //skickar användaren till startsidan
                 }
             }
-            echo '<div class="content">';
-            echo '<form method="post" action="register.php" id="blogpost">';
-            echo '<div><label for="Username">Username:</label><input type="text" name="Username" id="Username"/></div>';
-            echo '<div><label for="Password">Password:</label><input type="password" name="Password" id="Password"/></div>';
-            echo '<div><label for="CPassword">Confirm Password:</label><input type="password" name="CPassword" id="CPassword"/></div>';
-            echo '<div><input type="submit" value="Register" name="registration"/></div>'; //registreringsformuläret
-            echo '</form>';
-            echo '</div>';
+            ?>
+            <div class="content">';
+                <form method="post" action="register.php" id="blogpost">';
+                    <div><label for="Username">Username:</label><input type="text" name="Username" id="Username"/></div>';
+                    <div><label for="Password">Password:</label><input type="password" name="Password" id="Password"/></div>';
+                    <div><label for="CPassword">Confirm Password:</label><input type="password" name="CPassword" id="CPassword"/></div>';
+                    <div><input type="submit" value="Register" name="registration"/></div> <!-- >registreringsformuläret </!-- >
+                </form>';
+            </div>';
+            <?php
             require "partials/footer.php";
         ?>
         </div>
